@@ -4,11 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Canadian Province Capitals</title>
 </head>
 
 <body>
-    hello world!!
+    <h1>Ask About Canadian Province Capitals</h1>
+    <form method="post">
+        <label for="text_input">Enter a provine:</label>
+        <input type="text" id="text_input" name="text_input" required>
+        <button type="submit">Submit</button>
+    </form>
+
+    {% if question and answer %}
+    <h2>Province: {{ question }}</h2>
+    <h3>Capital: {{ answer }}</h3>
+    {% elif error %}
+    <h2 style="color: red;">{{ error }}</h2>
+    {% endif %}
 </body>
 
 </html>
