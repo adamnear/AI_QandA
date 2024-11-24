@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Canadian Province Capitals</title>
+    <link rel="stylesheet" href="../styles.css">
 </head>
 
 <body>
@@ -16,10 +17,14 @@
     </form>
 
     {% if question and answer %}
-    <h2>Province: {{ question }}</h2>
-    <h3>Capital: {{ answer }}</h3>
+    <div class="response">
+        <h2>Province: {{ question }}</h2>
+        <h3>Capital: {{ answer }}</h3>
+    </div>
     {% elif error %}
-    <h2 style="color: red;">{{ error }}</h2>
+    <div class="response">
+        <h2 class="error">{{ error }}</h2>
+    </div>
     {% endif %}
 </body>
 

@@ -45,7 +45,7 @@ def home():
                 return render_template('index.html', error=error)
         else:
             # Handle empty input
-            error = "Please enter a question."
+            error = "Please enter a province."
             return render_template('index.html', error=error)
 
     # For GET request
