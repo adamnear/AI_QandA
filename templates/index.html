@@ -5,21 +5,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Canadian Province Capitals</title>
-    <link rel="stylesheet" href="../styles.css">
+    <style>
+        /* General styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(to bottom, #ffeaea, #ffd1d1);
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            color: #b30000;
+            margin-top: 20px;
+        }
+
+        form {
+            max-width: 500px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            font-size: 1.2em;
+            color: #b30000;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            background: #ff4d4d;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2em;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #b30000;
+        }
+
+        .response {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #ffe5e5;
+            border: 1px solid #ff9999;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .response h2 {
+            color: #b30000;
+        }
+
+        .response h3 {
+            color: #ff4d4d;
+        }
+
+        .error {
+            color: #ff0000;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
     <h1>Ask About Canadian Province Capitals</h1>
     <form method="post">
-        <label for="text_input">Enter a provine:</label>
+        <label for="text_input">Enter a province or question:</label>
         <input type="text" id="text_input" name="text_input" required>
         <button type="submit">Submit</button>
     </form>
 
     {% if question and answer %}
     <div class="response">
-        <h2>Province: {{ question }}</h2>
-        <h3>Capital: {{ answer }}</h3>
+        <h2>Question: {{ question }}</h2>
+        <h3>Answer: {{ answer }}</h3>
     </div>
     {% elif error %}
     <div class="response">
